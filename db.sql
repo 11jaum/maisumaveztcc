@@ -74,7 +74,6 @@ CREATE TABLE `support` (
 
 CREATE TABLE psicologos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username_psicologo VARCHAR(255) NOT NULL,
     nome_psicologo VARCHAR(255) NOT NULL,
     cpf_psicologo VARCHAR(15) NOT NULL,
     especialidade VARCHAR(255) NOT NULL,
@@ -85,4 +84,11 @@ CREATE TABLE psicologos (
     data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+drop table psicologos;
+
+ALTER TABLE consulta
+ADD COLUMN contato TEXT NOT NULL;
+
 use papocabeca;
+
+ALTER TABLE psicologos DROP COLUMN username_psicologo;
